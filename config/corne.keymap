@@ -92,8 +92,8 @@ SHIFT_FUNCTION(NAME, BINDING, &u_macro_ ## NAME)
             label = "Gaming";
             bindings = <
 &trans      &kp TAB    &kp N1 &kp N2   &kp N3     &kp N4         &trans     &trans    &trans    &trans    &trans    &trans
-&mo LAYERS  &mt LGUI A  &mt LALT R  &mt LCTRL S    &mt LSHFT T    &kp G                &kp M          &mt LSHFT N   &mt LCTRL E    &mt LALT I    &mt LGUI O  &trans
-&trans      &kp SHIFT  &kp A  &kp S    &kp D      &kp F          &trans     &trans    &trans    &trans    &trans    &trans
+&mo LAYERS  &kp LCTRL  &kp Q  &kp W    &kp E      &kp R          &trans     &trans    &trans    &trans    &trans    &trans
+&trans      &kp LSHFT  &kp A  &kp S    &kp D      &kp F          &trans     &trans    &trans    &trans    &trans    &trans
                       &kp ESC  &kp SPACE  &kp TAB        &kp ENTER  &kp BSPC  &kp DEL
             >;
         };
