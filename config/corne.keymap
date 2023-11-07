@@ -220,5 +220,5 @@ SHIFT_MACRO(u_bt_sel_2, &bt BT_SEL 2, &bt BT_SEL 2 &bt BT_CLR)
 SHIFT_MACRO(u_bt_sel_3, &bt BT_SEL 3, &bt BT_SEL 3 &bt BT_CLR)
 SHIFT_MACRO(u_bt_sel_4, &bt BT_SEL 4, &bt BT_SEL 4 &bt BT_CLR)
 
-SHIFT_FUNCTION(u_out_tog, &out OUT_TOG, &out OUT_USB)
-SHIFT_FUNCTION(u_caps_word, &caps_word, &kp CAPS)
+SHIFT_FUNC(u_out_tog, &out OUT_TOG, &out OUT_USB)
+SHIFT_FUNC(u_caps_word, &caps_word, &kp CAPS)
