@@ -15,6 +15,8 @@
 #define SYM 7
 #define FN 8
 
+// based on the Miryoku layout by Manna Harbour and jasoneliu's keymap file.
+
 #define U_STRINGIFY(x) #x
 #define U_MACRO(name,...) \
 / { \
@@ -75,9 +77,9 @@ SHIFT_FUNC(NAME, BINDING, &u_macro_ ## NAME)
 
             label = "Base";
             bindings = <
-&trans      &kp Q       &kp W       &kp F          &kp P          &kp B                &kp J          &kp L         &kp U          &kp Y         &kp SQT     &trans
-&mo LAYERS  &mt LGUI A  &mt LALT R  &mt LCTRL S    &mt LSHFT T    &kp G                &kp M          &mt LSHFT N   &mt LCTRL E    &mt LALT I    &mt LGUI O  &trans
-&trans      &kp Z       &mt RALT X  &kp C          &kp D          &kp V                &kp K          &kp H         &kp CMMA       &mt RALT DOT  &kp FSLH    &trans
+&trans      &kp Q       &kp W       &kp E          &kp R          &kp T                &kp Y          &kp U         &kp I          &kp O         &kp P        &trans
+&mo LAYERS  &mt LGUI A  &mt LALT S  &mt LCTRL D    &mt LSHFT F    &kp G                &kp H          &mt LSHFT J   &mt LCTRL K    &mt LALT L    &mt LGUI SQT &trans
+&trans      &kp Z       &mt RALT X  &kp C          &kp V          &kp B                &kp N          &kp M         &kp CMMA       &mt RALT DOT  &kp FSLH     &trans
                                     &lt MEDIA ESC  &lt NAV SPACE  &lt MOUSE TAB        &lt SYM ENTER  &lt NUM BSPC  &lt FN DEL
             >;
         };
