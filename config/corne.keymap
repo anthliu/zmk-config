@@ -5,7 +5,7 @@
 #include <dt-bindings/zmk/outputs.h>
 
 // based on the Miryoku layout by Manna Harbour and jasoneliu's keymap file.
-#include <macros.dtsi>
+#include <config/macros.dtsi>
 
 // Layer Definitions
 #define BASE 0
