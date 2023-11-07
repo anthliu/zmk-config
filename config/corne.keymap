@@ -7,7 +7,7 @@
 // based on the Miryoku layout by Manna Harbour and jasoneliu's keymap file.
 
 // Layer Definitions
-#define HOME 0
+#define BASE 0
 #define GAMING 1
 #define LAYERS 2
 #define NAV 3
@@ -77,14 +77,14 @@ SHIFT_FUNCTION(u_caps_word, &caps_word, &kp CAPS)
     keymap {
         compatible = "zmk,keymap";
 
-        home {
+        base {
 // -----------------------------------------------------------------------------------------------------------------------------
 // |        |   Q    |   W    |     E     |     R     |     T     | # |     Y     |     U    |    I    |    O   |   P    |     |
 // | LAYERS | A/LGUI | S/LALT |  D/LCTRL  |  F/LSHFT  |     G     | # |     H     | J/LSHFT  | K/LCTRR | L/LALT | ;/LGUI |     |
 // |        |   Z    | X/RALT |     C     |     V     |     B     | # |     N     |     M    |    ,    | ./RALT |   /    |     |
 //                            | ESC/MEDIA | SPACE/NAV | TAB/MOUSE | # | ENTER/SYM | BSPC/NUM | DEL/FN  |
 
-						label = "Home";
+						label = "Base";
             bindings = <
 &trans      &kp Q       &kp W       &kp F          &kp P          &kp B                &kp J          &kp L         &kp U          &kp Y         &kp SQT     &trans
 &mo LAYERS  &mt LGUI A  &mt LALT R  &mt LCTRL S    &mt LSHFT T    &kp G                &kp M          &mt LSHFT N   &mt LCTRL E    &mt LALT I    &mt LGUI O  &trans
@@ -112,14 +112,14 @@ SHIFT_FUNCTION(u_caps_word, &caps_word, &kp CAPS)
         layers {
 // ---------------------------------------------------------------------------------------------
 // |      |     |     |     |     |     | # |     |     |         |        |     |     |
-// | HELD |     |     |     |     |     | # |     |     | HOME    | GAMING |     |     |
+// | HELD |     |     |     |     |     | # |     |     | BASE    | GAMING |     |     |
 // |      |     |     |     |     |     | # |     |     |         |        |     |     |
 //                    |     |     |     | # |     |     |         |
 
-						label = "Home";
+						label = "BLayers";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans       &trans      &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &to HOME     &to GAMING  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &to BASE     &to GAMING  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans       &trans      &trans  &trans
                         &trans  &trans  &trans        &trans  &trans  &trans
             >;
@@ -133,7 +133,7 @@ SHIFT_FUNCTION(u_caps_word, &caps_word, &kp CAPS)
 // |     |      | RALT |       |       |     | # | INS   | HOME | PGDN | PGUP  | END   |     |
 //                     |       | HELD  |     | # | ENTER | BSPC | DEL  |
 
-						label = "Home";
+						label = "Nav";
             bindings = <
 &trans  &trans    &trans    &trans     &trans     &trans        &kp K_REDO    &kp K_CUT  &kp K_COPY  &kp K_PASTE  &kp K_UNDO  &trans
 &trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans        &kp CAPSLOCK  &kp LEFT   &kp DOWN    &kp UP       &kp RIGHT   &trans
