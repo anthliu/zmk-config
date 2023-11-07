@@ -17,6 +17,45 @@
 #define SYM 7
 #define FN 8
 
+#define U_STRINGIFY(x) #x
+#define U_MACRO(name,...) \
+/ { \
+  macros { \
+    name: name { \
+      label = U_STRINGIFY(ZM_ ## name); \
+      compatible = "zmk,behavior-macro"; \
+      #binding-cells = <0>; \
+      __VA_ARGS__ \
+    }; \
+  }; \
+};
+
+#define SHIFT_FUNC(NAME, BINDING, SHIFT_BINDING) \
+/ { \
+  behaviors { \
+    NAME: NAME { \
+      compatible = "zmk,behavior-mod-morph"; \
+      label = U_STRINGIFY(NAME); \
+      #binding-cells = <0>; \
+      bindings = <BINDING>, <SHIFT_BINDING>; \
+      mods = <(MOD_LSFT|MOD_RSFT)>; \
+    }; \
+  }; \
+};
+
+#define SHIFT_MACRO(NAME, BINDING, SHIFT_BINDING) \
+U_MACRO(u_macro_ ## NAME, wait-ms = <0>; bindings = <SHIFT_BINDING>;) \
+SHIFT_FUNCTION(NAME, BINDING, &u_macro_ ## NAME)
+
+SHIFT_MACRO(u_bt_sel_0, &bt BT_SEL 0, &bt BT_SEL 0 &bt BT_CLR)
+SHIFT_MACRO(u_bt_sel_1, &bt BT_SEL 1, &bt BT_SEL 1 &bt BT_CLR)
+SHIFT_MACRO(u_bt_sel_2, &bt BT_SEL 2, &bt BT_SEL 2 &bt BT_CLR)
+SHIFT_MACRO(u_bt_sel_3, &bt BT_SEL 3, &bt BT_SEL 3 &bt BT_CLR)
+SHIFT_MACRO(u_bt_sel_4, &bt BT_SEL 4, &bt BT_SEL 4 &bt BT_CLR)
+
+SHIFT_FUNCTION(u_out_tog, &out OUT_TOG, &out OUT_USB)
+SHIFT_FUNCTION(u_caps_word, &caps_word, &kp CAPS)
+
 // Behavior configuration
 &mt {
     tapping-term-ms = <200>;
@@ -33,7 +72,7 @@
     quick-release;
 };
 
-// Keymap configuration (Colemak-DHm)
+// Keymap configuration
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -56,16 +95,16 @@
 
         gaming {
 // ----------------------------------------------------------------------------------------------------
-// |        |   Q   |   W   |   E   |   R   |   T   | # |   Y   |   U   |   I   |   O   |   P   |     |
-// | LAYERS |   A   |   S   |   D   |   F   |   G   | # |   H   |   J   |   K   |   L   |   ;   |     |
-// |        |   Z   |   X   |   C   |   V   |   B   | # |   N   |   M   |   ,   |   .   |   /   |     |
+// |        | TAB   |   1   |   2   |   3   |   4   | # |   Y   |   U   |   I   |   O   |   P   |     |
+// | LAYERS | CTRL  |   Q   |   W   |   E   |   R   | # |   H   |   J   |   K   |   L   |   ;   |     |
+// |        | SHIFT |   A   |   S   |   D   |   F   | # |   N   |   M   |   ,   |   .   |   /   |     |
 //                          |  ESC  | SPACE |  TAB  | # | ENTER | BSPC  |  DEL  |
 
 						label = "Gaming";
             bindings = <
-&trans      &kp Q  &kp W  &kp K    &kp S      &kp F          &kp O      &kp I     &kp L     &kp SEMI  &kp R     &trans
-&mo LAYERS  &kp A  &kp D  &kp V    &kp E      &kp G          &kp M      &kp Y     &kp N     &kp U     &kp SQT   &trans
-&trans      &kp Z  &kp X  &kp C    &kp B      &kp T          &kp J      &kp H     &kp CMMA  &kp DOT   &kp FSLH  &trans
+&trans      &kp TAB    &kp N1 &kp N2   &kp N3     &kp N4         &trans     &trans    &trans    &trans    &trans    &trans
+&mo LAYERS  &kp CTRL   &kp Q  &kp W    &kp E      &kp R          &trans     &trans    &trans    &trans    &trans    &trans
+&trans      &kp SHIFT  &kp A  &kp S    &kp D      &kp F          &trans     &trans    &trans    &trans    &trans    &trans
                       &kp ESC  &kp SPACE  &kp TAB        &kp ENTER  &kp BSPC  &kp DEL
             >;
         };
@@ -123,17 +162,16 @@
 
         media {
 // -----------------------------------------------------------------------------------------------------
-// |     |      |      |       |       |      | # | BOOTLOAD | EP_OFF | BR_D   | BR_U   | EP_ON  |     |
-// |     | LGUI | LALT | LCTRL | LSHFT |      | # | RESET    | PREV   | VOL_D  | VOL_U  | NEXT   |     |
-// |     |      | RALT |       |       |      | # | OUT_BLE  | BT_0   | BT_PRV | BT_NXT | BT_CLR |     |
-//                     | HELD  |       |      | # | STOP     | PLAY   | MUTE   |
-
+// |     |      |      |       |       |      | # | RGB_TOG  |        | BR_D   | BR_U   | EP_ON  |     |
+// |     | LGUI | LALT | LCTRL | LSHFT |      | # | EP_TOG   | PREV   | VOL_D  | VOL_U  | NEXT   |     |
+// |     |      | RALT |       |       |      | # | OUT_TOG  | BT_0   | BT_1   | BT_2   | BT_3   |     |
+//                     | HELD  |       |      | # | STOP     | PLAY/P | MUTE   |
 						label = "Media";
             bindings = <
-&trans  &trans    &trans    &trans     &trans     &trans        &bootloader   &ext_power EP_OFF  &cp C_BRI_DN  &cp C_BRI_UP  &ext_power EP_ON  &trans
-&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans        &reset        &cp C_PREV         &cp C_VOL_DN  &cp C_VOL_UP  &cp C_NEXT        &trans
-&trans  &trans    &kp RALT  &trans     &trans     &trans        &out OUT_BLE  &bt BT_SEL 0       &bt BT_PRV    &bt BT_NXT    &bt BT_CLR        &trans
-                            &trans     &trans     &trans        &cp C_STOP    &cp C_PLAY         &cp C_MUTE
+&trans  &trans    &trans    &trans     &trans     &trans        &bootloader       &trans        &cp C_BRI_DN  &cp C_BRI_UP  &ext_power EP_ON  &trans
+&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans        &ext_power EP_TOG &cp C_PREV    &cp C_VOL_DN  &cp C_VOL_UP  &cp C_NEXT        &trans
+&trans  &trans    &kp RALT  &trans     &trans     &trans        &out OUT_TOG      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3      &trans
+                            &trans     &trans     &trans        &cp C_STOP        &cp C_PP      &cp C_MUTE
             >;
         };
 
