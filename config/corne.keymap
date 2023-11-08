@@ -269,3 +269,8 @@ SHIFT_MACRO(u_bt_sel_4, &bt BT_SEL 4, &bt BT_SEL 4 &bt BT_CLR)
 
 SHIFT_FUNC(u_out_tog, &out OUT_TOG, &out OUT_USB)
 SHIFT_FUNC(u_caps_word, &caps_word, &kp CAPS)
+
+SHIFT_MACRO(u_nav_left_repeat, &kp LEFT, &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT)
+SHIFT_MACRO(u_nav_right_repeat, &kp RIGHT, &kp RIGHT &kp RIGHT &kp RIGHT &kp RIGHT &kp RIGHT)
+SHIFT_MACRO(u_nav_up_repeat, &kp UP, &kp UP &kp UP &kp UP &kp UP &kp UP)
+SHIFT_MACRO(u_nav_down_repeat, &kp DOWN, &kp DOWN &kp DOWN &kp DOWN &kp DOWN &kp DOWN)
