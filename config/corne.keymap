@@ -120,10 +120,10 @@ SHIFT_MACRO(u_bt_sel_4, &bt BT_SEL 4, &bt BT_SEL 4 &bt BT_CLR)
 SHIFT_FUNC(u_out_tog, &out OUT_TOG, &out OUT_USB)
 SHIFT_FUNC(u_caps_word, &caps_word, &kp CAPS)
 
-SHIFT_MACRO(u_nav_left_repeat, &kp LEFT, &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT)
-SHIFT_MACRO(u_nav_right_repeat, &kp RIGHT, &kp RIGHT &kp RIGHT &kp RIGHT &kp RIGHT &kp RIGHT)
-SHIFT_MACRO(u_nav_up_repeat, &kp UP, &kp UP &kp UP &kp UP &kp UP &kp UP)
-SHIFT_MACRO(u_nav_down_repeat, &kp DOWN, &kp DOWN &kp DOWN &kp DOWN &kp DOWN &kp DOWN)
+SHIFT_MACRO(u_nav_lt, &kp LEFT, &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT)
+SHIFT_MACRO(u_nav_rt, &kp RIGHT, &kp RIGHT &kp RIGHT &kp RIGHT &kp RIGHT &kp RIGHT)
+SHIFT_MACRO(u_nav_up, &kp UP, &kp UP &kp UP &kp UP &kp UP &kp UP)
+SHIFT_MACRO(u_nav_dn, &kp DOWN, &kp DOWN &kp DOWN &kp DOWN &kp DOWN &kp DOWN)
 
 // Keymap configuration
 / {
@@ -189,7 +189,7 @@ SHIFT_MACRO(u_nav_down_repeat, &kp DOWN, &kp DOWN &kp DOWN &kp DOWN &kp DOWN &kp
             label = "Nav";
             bindings = <
 &trans  &trans    &trans    &trans     &trans     &trans        &kp K_REDO    &kp K_CUT  &kp K_COPY  &kp K_PASTE  &kp K_UNDO   &trans
-&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans        &kp LEFT      &kp DOWN   &kp UP      &kp RIGHT    &caps_word   &trans
+&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans        &u_nav_lt     &u_nav_dn  &u_nav_up   &u_nav_rt    &u_caps_word &trans
 &trans  &trans    &kp RALT  &trans     &trans     &trans        &kp HOME      &kp PG_DN  &kp PG_UP   &kp END      &kp INS      &trans
                             &trans     &trans     &trans        &kp ENTER     &kp BSPC   &kp DEL
             >;
@@ -221,7 +221,7 @@ SHIFT_MACRO(u_nav_down_repeat, &kp DOWN, &kp DOWN &kp DOWN &kp DOWN &kp DOWN &kp
             bindings = <
 &trans  &trans    &trans    &trans     &trans     &trans        &bootloader       &trans        &cp C_BRI_DN  &cp C_BRI_UP  &ext_power EP_ON  &trans
 &trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans        &ext_power EP_TOG &cp C_PREV    &cp C_VOL_DN  &cp C_VOL_UP  &cp C_NEXT        &trans
-&trans  &trans    &kp RALT  &trans     &trans     &trans        &out OUT_TOG      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3      &trans
+&trans  &trans    &kp RALT  &trans     &trans     &trans        &u_out_tog        &u_bt_sel_0   &u_bt_sel_1   &u_bt_sel_2   &u_bt_sel_3       &trans
                             &trans     &trans     &trans        &cp C_STOP        &cp C_PP      &cp C_MUTE
             >;
         };
