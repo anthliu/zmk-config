@@ -117,49 +117,49 @@ SHIFT_FUNC(NAME, BINDING, &u_macro_ ## NAME)
 
         base {
 // -----------------------------------------------------------------------------------------------------------------------------
-// |        |   Q    |   W    |     E     |     R     |     T     | # |     Y     |     U    |    I    |    O   |   P    |     |
-// | LAYERS | A/LGUI | S/LALT |  D/LCTRL  |  F/LSHFT  |     G     | # |     H     | J/LSHFT  | K/LCTRR | L/LALT | '/LGUI |     |
-// |        |   Z    | X/RALT |     C     |     V     |     B     | # |     N     |     M    |    ,    | ./RALT |   /    |     |
+// |        |   Q    |   W    |     E     |     R     |     T     | # |     Y     |     U    |    I    |    O   |   P      |     |
+// |        | A/LGUI | S/LALT |  D/LCTRL  |  F/LSHFT  |     G     | # |     H     | J/LSHFT  | K/LCTRR | L/LALT | '/LGUI   |     |
+// |        |   Z    | X/RALT |     C     |     V     |     B     | # |     N     |     M    |    ,    | ./RALT | //Layers |     |
 //                            | ESC/MEDIA | SPACE/NAV | TAB/MOUSE | # | ENTER/SYM | BSPC/NUM | DEL/FN  |
 
             label = "Base";
             bindings = <
-&trans      &kp Q       &kp W       &kp E          &kp R          &kp T                &kp Y          &kp U         &kp I          &kp O         &kp P         &trans
-&mo LAYERS  &hml LGUI A &hml LALT S &hml LCTRL D   &mt LSHFT F    &kp G                &kp H          &mt LSHFT J   &hmr LCTRL K   &hmr LALT L   &hmr LGUI SQT &trans
-&trans      &kp Z       &mt RALT X  &kp C          &kp V          &kp B                &kp N          &kp M         &kp CMMA       &mt RALT DOT  &kp FSLH      &trans
+&trans      &kp Q       &kp W       &kp E          &kp R          &kp T                &kp Y          &kp U         &kp I          &kp O         &kp P           &trans
+&trans      &hml LGUI A &hml LALT S &hml LCTRL D   &mt LSHFT F    &kp G                &kp H          &mt LSHFT J   &hmr LCTRL K   &hmr LALT L   &hmr LGUI SQT   &trans
+&trans      &kp Z       &mt RALT X  &kp C          &kp V          &kp B                &kp N          &kp M         &kp CMMA       &mt RALT DOT  &lt LAYERS FSLH &trans
                                     &lt MEDIA ESC  &lt NAV SPACE  &lt MOUSE TAB        &lt SYM ENTER  &lt NUM BSPC  &lt FN DEL
             >;
         };
 
         gaming {
 // ----------------------------------------------------------------------------------------------------
-// |        | TAB   |   1   |   2   |   3   |   4   | # |   Y   |   U   |   I   |   O   |   P   |     |
-// | LAYERS | CTRL  |   Q   |   W   |   E   |   R   | # |   H   |   J   |   K   |   L   |   ;   |     |
-// | ALT    | SHIFT |   A   |   S   |   D   |   F   | # |   N   |   M   |   ,   |   .   |   /   |     |
+// |        | LCTRL |   1   |   2   |   3   |   4   | # |     Y     |     U    |    I    |    O   |   P      |     |
+// |        | SHIFT |   Q   |   W   |   E   |   R   | # |     H     | J/LSHFT  | K/LCTRR | L/LALT | '/LGUI   |     |
+// |        | LALT  |   A   |   S   |   D   |   F   | # |     N     |     M    |    ,    | ./RALT | //Layers |     |
 //                          |  ESC  | SPACE |  TAB  | # | ENTER | BSPC  |  DEL  |
 
             label = "Gaming";
             bindings = <
-&trans      &kp TAB    &kp N1 &kp N2   &kp N3     &kp N4         &trans     &trans    &trans    &trans    &trans    &trans
-&mo LAYERS  &kp LCTRL  &kp Q  &kp W    &kp E      &kp R          &trans     &trans    &trans    &trans    &trans    &trans
-&kp LALT    &kp LSHFT  &kp A  &kp S    &kp D      &kp F          &trans     &trans    &trans    &trans    &trans    &trans
+&trans      &kp LCTRL  &kp N1 &kp N2   &kp N3     &kp N4         &kp Y          &kp U         &kp I          &kp O         &kp P           &trans
+&trans      &kp SHIFT  &kp Q  &kp W    &kp E      &kp R          &kp H          &mt LSHFT J   &hmr LCTRL K   &hmr LALT L   &hmr LGUI SQT   &trans
+&trans      &kp LALT   &kp A  &kp S    &kp D      &kp F          &kp N          &kp M         &kp CMMA       &mt RALT DOT  &lt LAYERS FSLH &trans
                       &kp ESC  &kp SPACE  &kp TAB        &kp ENTER  &kp BSPC  &kp DEL
             >;
         };
 
         layers {
 // ---------------------------------------------------------------------------------------------
-// |      |     |     |     |     |     | # |     |      |         |        |     |     |
-// | HELD |     |     |     |     |     | # |     | BASE | GAMING  |        |     |     |
-// |      |     |     |     |     |     | # |     |      |         |        |     |     |
-//                    |     |     |     | # |     |      |         |
+// |      |     |     |        |      |     | # |     |      |         |        |      |      |
+// |      |     |     | GAMING | BASE |     | # |     |      |         |        |      |      |
+// |      |     |     |        |      |     | # |     |      |         |        | HELD |      |
+//                    |        |      |     | # |     |      |         |
 
             label = "BLayers";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans   &trans       &trans      &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &trans  &to BASE &to GAMING   &trans      &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans   &trans       &trans      &trans  &trans
-                        &trans  &trans  &trans        &trans  &trans   &trans
+&trans  &trans  &trans  &trans     &trans   &trans        &trans  &trans   &trans       &trans      &trans  &trans
+&trans  &trans  &trans  &to GAMING &to BASE &trans        &trans  &trans   &trans       &trans      &trans  &trans
+&trans  &trans  &trans  &trans     &trans   &trans        &trans  &trans   &trans       &trans      &trans  &trans
+                        &trans     &trans   &trans        &trans  &trans   &trans
             >;
         };
 
