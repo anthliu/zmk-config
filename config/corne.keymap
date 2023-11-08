@@ -69,7 +69,7 @@ SHIFT_FUNC(NAME, BINDING, &u_macro_ ## NAME)
     behaviors {
         hml: left_hand_positional_hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOME_MOD_L"'
+            label = "HOME_MOD_L";
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <280>;
@@ -81,7 +81,7 @@ SHIFT_FUNC(NAME, BINDING, &u_macro_ ## NAME)
         };
         hmr: right_hand_positional_hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOME_MOD_R"'
+            label = "HOME_MOD_R";
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <280>;
