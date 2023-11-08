@@ -119,14 +119,14 @@ SHIFT_FUNC(NAME, BINDING, &u_macro_ ## NAME)
 // ----------------------------------------------------------------------------------------------------
 // |        | TAB   |   1   |   2   |   3   |   4   | # |   Y   |   U   |   I   |   O   |   P   |     |
 // | LAYERS | CTRL  |   Q   |   W   |   E   |   R   | # |   H   |   J   |   K   |   L   |   ;   |     |
-// |        | SHIFT |   A   |   S   |   D   |   F   | # |   N   |   M   |   ,   |   .   |   /   |     |
+// | ALT    | SHIFT |   A   |   S   |   D   |   F   | # |   N   |   M   |   ,   |   .   |   /   |     |
 //                          |  ESC  | SPACE |  TAB  | # | ENTER | BSPC  |  DEL  |
 
             label = "Gaming";
             bindings = <
 &trans      &kp TAB    &kp N1 &kp N2   &kp N3     &kp N4         &trans     &trans    &trans    &trans    &trans    &trans
 &mo LAYERS  &kp LCTRL  &kp Q  &kp W    &kp E      &kp R          &trans     &trans    &trans    &trans    &trans    &trans
-&trans      &kp LSHFT  &kp A  &kp S    &kp D      &kp F          &trans     &trans    &trans    &trans    &trans    &trans
+&kp LALT    &kp LSHFT  &kp A  &kp S    &kp D      &kp F          &trans     &trans    &trans    &trans    &trans    &trans
                       &kp ESC  &kp SPACE  &kp TAB        &kp ENTER  &kp BSPC  &kp DEL
             >;
         };
