@@ -133,17 +133,17 @@ SHIFT_FUNC(NAME, BINDING, &u_macro_ ## NAME)
 
         layers {
 // ---------------------------------------------------------------------------------------------
-// |      |     |     |     |     |     | # |     |     |         |        |     |     |
-// | HELD |     |     |     |     |     | # |     |     | BASE    | GAMING |     |     |
-// |      |     |     |     |     |     | # |     |     |         |        |     |     |
-//                    |     |     |     | # |     |     |         |
+// |      |     |     |     |     |     | # |     |      |         |        |     |     |
+// | HELD |     |     |     |     |     | # |     | BASE | GAMING  |        |     |     |
+// |      |     |     |     |     |     | # |     |      |         |        |     |     |
+//                    |     |     |     | # |     |      |         |
 
             label = "BLayers";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans       &trans      &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &to BASE     &to GAMING  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans       &trans      &trans  &trans
-                        &trans  &trans  &trans        &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans   &trans       &trans      &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans  &to BASE &to GAMING   &trans      &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans   &trans       &trans      &trans  &trans
+                        &trans  &trans  &trans        &trans  &trans   &trans
             >;
         };
 
