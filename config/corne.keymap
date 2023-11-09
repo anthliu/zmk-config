@@ -48,6 +48,10 @@
 U_MACRO(u_macro_ ## NAME, wait-ms = <0>; bindings = <SHIFT_BINDING>;) \
 SHIFT_FUNC(NAME, BINDING, &u_macro_ ## NAME)
 
+#define SHIFT_MACRO_KP(NAME, BINDING, SHIFT_BINDING) \
+U_MACRO(u_macro_ ## NAME, wait-ms = <30>; tap-ms = <30>; bindings = <SHIFT_BINDING>;) \
+SHIFT_FUNC(NAME, BINDING, &u_macro_ ## NAME)
+
 // Behavior configuration
 &mt {
     tapping-term-ms = <200>;
@@ -120,10 +124,10 @@ SHIFT_MACRO(u_bt_sel_4, &bt BT_SEL 4, &bt BT_SEL 4 &bt BT_CLR)
 SHIFT_FUNC(u_out_tog, &out OUT_TOG, &out OUT_USB)
 SHIFT_FUNC(u_caps_word, &caps_word, &kp CAPS)
 
-SHIFT_MACRO(u_nav_lt, &kp LEFT, &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT)
-SHIFT_MACRO(u_nav_rt, &kp RIGHT, &kp RIGHT &kp RIGHT &kp RIGHT &kp RIGHT &kp RIGHT)
-SHIFT_MACRO(u_nav_up, &kp UP, &kp UP &kp UP &kp UP &kp UP &kp UP)
-SHIFT_MACRO(u_nav_dn, &kp DOWN, &kp DOWN &kp DOWN &kp DOWN &kp DOWN &kp DOWN)
+SHIFT_MACRO_KP(u_nav_lt, &kp LEFT, &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT)
+SHIFT_MACRO_KP(u_nav_rt, &kp RIGHT, &kp RIGHT &kp RIGHT &kp RIGHT &kp RIGHT &kp RIGHT)
+SHIFT_MACRO_KP(u_nav_up, &kp UP, &kp UP &kp UP &kp UP &kp UP &kp UP)
+SHIFT_MACRO_KP(u_nav_dn, &kp DOWN, &kp DOWN &kp DOWN &kp DOWN &kp DOWN &kp DOWN)
 
 // Keymap configuration
 / {
