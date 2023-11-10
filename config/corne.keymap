@@ -129,6 +129,8 @@ SHIFT_MACRO_KP(u_nav_rt, &kp RIGHT, &kp RIGHT &kp RIGHT &kp RIGHT &kp RIGHT &kp 
 SHIFT_MACRO_KP(u_nav_up, &kp UP, &kp UP &kp UP &kp UP &kp UP &kp UP)
 SHIFT_MACRO_KP(u_nav_dn, &kp DOWN, &kp DOWN &kp DOWN &kp DOWN &kp DOWN &kp DOWN)
 
+SHIFT_FUNC(u_dot_par, &kp DOT, &kp LPAR)
+
 // Keymap configuration
 / {
     keymap {
@@ -239,10 +241,10 @@ SHIFT_MACRO_KP(u_nav_dn, &kp DOWN, &kp DOWN &kp DOWN &kp DOWN &kp DOWN &kp DOWN)
 
             label = "Num";
             bindings = <
-&trans  &kp LBKT   &kp N7  &kp N8   &kp N9  &kp RBKT         &trans  &trans     &trans     &trans    &trans    &trans
-&trans  &kp SEMI   &kp N4  &kp N5   &kp N6  &kp EQUAL        &trans  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &trans
-&trans  &kp GRAVE  &kp N1  &kp N2   &kp N3  &kp BSLH         &trans  &trans     &trans     &kp RALT  &trans    &trans
-                           &kp DOT  &kp N0  &kp MINUS        &trans  &trans     &trans
+&trans  &kp LBKT   &kp N7  &kp N8     &kp N9  &kp RBKT         &trans  &trans     &trans     &trans    &trans    &trans
+&trans  &kp SEMI   &kp N4  &kp N5     &kp N6  &kp EQUAL        &trans  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &trans
+&trans  &kp GRAVE  &kp N1  &kp N2     &kp N3  &kp BSLH         &trans  &trans     &trans     &kp RALT  &trans    &trans
+                           &u_dot_par &kp N0  &kp MINUS        &trans  &trans     &trans
             >;
         };
 
