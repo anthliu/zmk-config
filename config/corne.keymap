@@ -139,14 +139,14 @@ SHIFT_MACRO_KP(u_nav_dn, &kp DOWN, &kp DOWN &kp DOWN &kp DOWN &kp DOWN &kp DOWN)
 // |        |   Q    |   W    |     E     |     R     |     T     | # |     Y     |     U    |    I    |    O   |   P      |     |
 // |        | A/LGUI | S/LALT |  D/LCTRL  |  F/LSHFT  |     G     | # |     H     | J/LSHFT  | K/LCTRR | L/LALT | '/LGUI   |     |
 // |        |   Z    | X/RALT |     C     |     V     |     B     | # |     N     |     M    |    ,    | ./RALT | //Layers |     |
-//                            | ESC/MEDIA | SPACE/NAV | TAB/MOUSE | # | ENTER/SYM | BSPC/NUM | DEL/FN  |
+//                            | ESC/MEDIA | TAB/MOUSE | SPACE/NAV | # | ENTER/SYM | BSPC/NUM | DEL/FN  |
 
             label = "Base";
             bindings = <
 &trans      &kp Q       &kp W       &kp E          &kp R          &kp T                &kp Y          &kp U         &kp I          &kp O         &kp P           &trans
 &trans      &hml LGUI A &hml LALT S &hml LCTRL D   &mt LSHFT F    &kp G                &kp H          &mt LSHFT J   &hmr LCTRL K   &hmr LALT L   &hmr LGUI SQT   &trans
 &trans      &kp Z       &mt RALT X  &kp C          &kp V          &kp B                &kp N          &kp M         &kp CMMA       &mt RALT DOT  &lt LAYERS FSLH &trans
-                                    &lt MEDIA ESC  &lt NAV SPACE  &lt MOUSE TAB        &lt SYM ENTER  &lt NUM BSPC  &lt FN DEL
+                                    &lt MEDIA ESC  &lt MOUSE TAB  &lt NAV SPACE        &lt SYM ENTER  &lt NUM BSPC  &lt FN DEL
             >;
         };
 
@@ -155,14 +155,14 @@ SHIFT_MACRO_KP(u_nav_dn, &kp DOWN, &kp DOWN &kp DOWN &kp DOWN &kp DOWN &kp DOWN)
 // |        | ESC   |   1   |   2   |   3   |   4   | # |     Y     |     U    |    I    |    O   |   P      |     |
 // |        | TAB   |   Q   |   W   |   E   |   R   | # |     H     | J/LSHFT  | K/LCTRR | L/LALT | '/LGUI   |     |
 // |        | SHIFT |   A   |   S   |   D   |   F   | # |     N     |     M    |    ,    | ./RALT | //Layers |     |
-//                          |  ALT  | SPACE |  CTRL | # | ENTER | BSPC  |  DEL  |
+//                          |  ALT  | CTRL  | SPACE | # | ENTER | BSPC  |  DEL  |
 
             label = "Gaming";
             bindings = <
 &trans      &kp ESC    &kp N1 &kp N2   &kp N3     &kp N4         &kp Y          &kp U         &kp I          &kp O         &kp P           &trans
 &trans      &kp TAB    &kp Q  &kp W    &kp E      &kp R          &kp H          &mt LSHFT J   &hmr LCTRL K   &hmr LALT L   &hmr LGUI SQT   &trans
 &trans      &kp LSHFT  &kp A  &kp S    &kp D      &kp F          &kp N          &kp M         &kp CMMA       &mt RALT DOT  &lt LAYERS FSLH &trans
-                      &kp LALT &kp SPACE  &kp LCTRL      &kp ENTER  &kp BSPC  &kp DEL
+                      &kp LALT &kp LCTRL &kp SPACE       &kp ENTER  &kp BSPC  &kp DEL
             >;
         };
 
@@ -188,7 +188,7 @@ SHIFT_MACRO_KP(u_nav_dn, &kp DOWN, &kp DOWN &kp DOWN &kp DOWN &kp DOWN &kp DOWN)
 // |     |      |      |       |       |     | # | REDO  | CUT  | COPY | PASTE | UNDO  |     |
 // |     | LGUI | LALT | LCTRL | LSHFT |     | # | LEFT | DOWN | UP    | RIGHT | CAPSW |     |
 // |     |      | LEFT | UP    | DOWN  | RT  | # | HOME | PGDN | PGUP  | END   | INS   |     |
-//                     |       | HELD  |     | # | ENTER | BSPC | DEL  |
+//                     |       |       | HELD| # | ENTER | BSPC | DEL  |
 
             label = "Nav";
             bindings = <
@@ -204,7 +204,7 @@ SHIFT_MACRO_KP(u_nav_dn, &kp DOWN, &kp DOWN &kp DOWN &kp DOWN &kp DOWN &kp DOWN)
 // |     |      |      |       |       |      | # |     |     |     |     |     |     |
 // |     | LGUI | LALT | LCTRL | LSHFT |      | # |     |     |     |     |     |     |
 // |     |      | RALT |       |       |      | # |     |     |     |     |     |     |
-//                     |       |       | HELD | # |     |     |     |
+//                     |       | HELD  |      | # |     |     |     |
 
             label = "Mouse";
             bindings = <
@@ -267,14 +267,14 @@ SHIFT_MACRO_KP(u_nav_dn, &kp DOWN, &kp DOWN &kp DOWN &kp DOWN &kp DOWN &kp DOWN)
 // |     |  F12 |  F7  |  F8  |  F9   | PSCRN | # |     |       |       |      |      |     |
 // |     |  F11 |  F4  |  F5  |  F6   | SLCK  | # |     | LSHFT | LCTRL | LALT | LGUI |     |
 // |     |  F10 |  F1  |  F2  |  F3   | PAUSE | # |     |       |       | RALT |      |     |
-//                     | ESC  | SPACE |  TAB  | # |     |       | HELD  |
+//                     | ESC  | TAB   | SPACE | # |     |       | HELD  |
 
             label = "Func";
             bindings = <
 &trans  &kp F12  &kp F7  &kp F8   &kp F9     &kp PSCRN              &trans  &trans     &trans     &trans    &trans    &trans
 &trans  &kp F11  &kp F4  &kp F5   &kp F6     &kp SLCK               &trans  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &trans
 &trans  &kp F10  &kp F1  &kp F2   &kp F3     &kp PAUSE_BREAK        &trans  &trans     &trans     &kp RALT  &trans    &trans
-                         &kp ESC  &kp SPACE  &kp TAB                &trans  &trans     &trans
+                         &kp ESC  &kp TAB    &kp SPACE              &trans  &trans     &trans
             >;
         };
     };
