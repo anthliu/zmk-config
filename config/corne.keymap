@@ -55,7 +55,7 @@ SHIFT_FUNC(NAME, BINDING, &u_macro_ ## NAME)
 
 // Behavior configuration
 &mt {
-    tapping-term-ms = <180>;
+    tapping-term-ms = <150>;
     quick_tap_ms = <0>;
     flavor = "tap-preferred";
 };
