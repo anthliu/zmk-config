@@ -204,16 +204,16 @@ SHIFT_FUNC(u_nine_space, &kp N9, &kp SPACE)
 
 
         navigation {
-// -------------------------------------------------------------------------------------------
-// |     |      |      |       |       |     | # | REDO  | CUT  | COPY | PASTE | UNDO  |     |
-// |     | LGUI | LALT | LCTRL | LSHFT |     | # | LEFT | DOWN | UP    | RIGHT | CAPSW |     |
-// |     |      | LEFT | UP    | DOWN  | RT  | # | HOME | PGDN | PGUP  | END   | INS   |     |
-//                     |       |       | HELD| # | ENTER | BSPC | DEL  |
+// --------------------------------------------------------------------------------------------
+// |     |      |      |       |       |      | # | REDO  | CUT  | COPY | PASTE | UNDO  |     |
+// |     | LGUI | LALT | LCTRL | LSHFT | BSPC | # | LEFT | DOWN | UP    | RIGHT | CAPSW |     |
+// |     |      | LEFT | UP    | DOWN  | RT   | # | HOME | PGDN | PGUP  | END   | INS   |     |
+//                     |       |       | HELD | # | ENTER | BSPC | DEL  |
 
             label = "Nav";
             bindings = <
 &trans  &trans    &trans    &trans     &trans     &trans        &kp K_REDO    &kp K_CUT  &kp K_COPY  &kp K_PASTE  &kp K_UNDO   &trans
-&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans        &u_nav_lt     &u_nav_dn  &u_nav_up   &u_nav_rt    &u_caps_word &trans
+&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp BSPC      &u_nav_lt     &u_nav_dn  &u_nav_up   &u_nav_rt    &u_caps_word &trans
 &trans  &trans    &kp LEFT  &kp UP     &kp DOWN   &kp RIGHT     &kp HOME      &kp PG_DN  &kp PG_UP   &kp END      &kp INS      &trans
                             &trans     &trans     &trans        &kp ENTER     &kp BSPC   &kp DEL
             >;
