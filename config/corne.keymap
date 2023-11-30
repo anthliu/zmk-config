@@ -180,7 +180,7 @@ SHIFT_FUNC(u_nine_space, &kp N9, &kp SPACE)
             bindings = <
 &trans      &kp W       &kp L       &kp Y          &kp P          &kp B                &kp Z          &kp F         &kp O          &kp U          &kp SQT         &trans
 &trans      &hml LGUI C &hml LALT R &hml LCTRL S   &mt LSHFT T    &kp G                &kp M          &mt LSHFT N   &hmr LCTRL E   &hmr LALT I    &hmr LGUI A     &trans
-&trans      &kp Q       &hml RALT J &kp V          &kp D          &kp K                &kp X          &kp H         &kp FSLH       &hmr RALT CMMA &lt LAYERS DOT  &trans
+&trans      &kp Q       &hml RALT J &kp V          &kp D          &kp K                &kp X          &kp H         &kp CMMA       &hmr RALT DOT  &lt LAYERS FSLH &trans
                                     &lt MEDIA ESC  &lt MOUSE TAB  &lt NAV SPACE        &lt SYM ENTER  &lt NUM BSPC  &lt FN DEL
             >;
         };
