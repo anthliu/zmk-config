@@ -103,7 +103,7 @@ SHIFT_FUNC(NAME, BINDING, &u_macro_ ## NAME)
 
 // mouse speed adjustments from krissen
 #define U_MOUSE_MOVE_MAX 1400                     /* <--- New max speed setting (default: 600) */
-#define U_MOUSE_MOVE_P_MAX 500                     /* <--- Precise max speed setting */
+#define U_MOUSE_P_MOVE_MAX 500                     /* <--- Precise max speed setting */
 #undef MOVE_UP
 #undef MOVE_DOWN
 #undef MOVE_LEFT
