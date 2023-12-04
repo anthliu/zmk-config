@@ -103,6 +103,7 @@ SHIFT_FUNC(NAME, BINDING, &u_macro_ ## NAME)
 
 // mouse speed adjustments from krissen
 #define U_MOUSE_MOVE_MAX 1400                     /* <--- New max speed setting (default: 600) */
+#define U_MOUSE_MOVE_P_MAX 500                     /* <--- Precise max speed setting */
 #undef MOVE_UP
 #undef MOVE_DOWN
 #undef MOVE_LEFT
@@ -111,9 +112,13 @@ SHIFT_FUNC(NAME, BINDING, &u_macro_ ## NAME)
 #define MOVE_DOWN MOVE_VERT(U_MOUSE_MOVE_MAX)
 #define MOVE_LEFT MOVE_HOR(-U_MOUSE_MOVE_MAX)
 #define MOVE_RIGHT MOVE_HOR(U_MOUSE_MOVE_MAX)
+#define MOVE_UP_P MOVE_VERT(-U_MOUSE_P_MOVE_MAX)
+#define MOVE_DOWN_P MOVE_VERT(U_MOUSE_P_MOVE_MAX)
+#define MOVE_LEFT_P MOVE_HOR(-U_MOUSE_P_MOVE_MAX)
+#define MOVE_RIGHT_P MOVE_HOR(U_MOUSE_P_MOVE_MAX)
 
 &mmv {
-    time-to-max-speed-ms = <400>;             /* <--- How long time until max speed is reached (default: 500) */
+    time-to-max-speed-ms = <300>;             /* <--- How long time until max speed is reached (default: 500) */
 };
 
 // custom macros
@@ -125,6 +130,11 @@ SHIFT_MACRO(u_bt_sel_4, &bt BT_SEL 4, &bt BT_SEL 4 &bt BT_CLR)
 
 SHIFT_FUNC(u_out_tog, &out OUT_TOG, &out OUT_USB)
 SHIFT_FUNC(u_caps_word, &caps_word, &kp CAPS)
+
+SHIFT_FUNC(u_mmv_up, &mmv MOVE_UP, &mmv MOVE_UP_P)
+SHIFT_FUNC(u_mmv_down, &mmv MOVE_DOWN, &mmv MOVE_DOWN_P)
+SHIFT_FUNC(u_mmv_left, &mmv MOVE_LEFT, &mmv MOVE_LEFT_P)
+SHIFT_FUNC(u_mmv_right, &mmv MOVE_RIGHT, &mmv MOVE_RIGHT_P)
 
 SHIFT_MACRO_KP(u_nav_lt, &kp LEFT, &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT)
 SHIFT_MACRO_KP(u_nav_rt, &kp RIGHT, &kp RIGHT &kp RIGHT &kp RIGHT &kp RIGHT &kp RIGHT)
@@ -237,17 +247,17 @@ SHIFT_FUNC(u_nine_space, &kp N9, &kp SPACE)
 
         mouse {
 // ------------------------------------------------------------------------------------
-// |     |      |      |       |       |      | # |     |     |     |     |     |     |
-// |     | LGUI | LALT | LCTRL | LSHFT |      | # |     |     |     |     |     |     |
-// |     |      | RALT |       |       |      | # |     |     |     |     |     |     |
-//                     |       | HELD  |      | # |     |     |     |
+// |     |      | LEFT | UP    | DOWN  | RT   | # | REDO | CUT  | COPY | PASTE | UNDO |     |
+// |     | LGUI | LALT | LCTRL | LSHFT |      | # |      | SCDN | UP   | SCUP  |      |     |
+// |     |      | MCLK | RCLK  | LCLK  |      | # | SCLFT| LEFT | DOWN | RIGHT | SCRT |     |
+//                     |       | HELD  |      | # | LCLK | RCLK | MCLK |
 
             label = "Mouse";
             bindings = <
-&trans  &trans    &trans    &trans     &trans     &trans        &trans           &trans           &trans         &trans            &trans  &trans
-&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans        &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_UP   &mmv MOVE_RIGHT   &trans  &trans
-&trans  &trans    &kp RALT  &trans     &trans     &trans        &mwh SCROLL_LEFT &mwh SCROLL_DOWN &mwh SCROLL_UP &mwh SCROLL_RIGHT &trans  &trans
-                            &trans     &trans     &trans        &mkp RCLK &mkp LCLK &mkp MCLK
+&trans  &trans    &kp LEFT  &kp UP     &kp DOWN   &kp RIGHT     &kp K_REDO    &kp K_CUT  &kp K_COPY  &kp K_PASTE  &kp K_UNDO   &trans
+&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans        &trans           &mwh SCROLL_DOWN &u_mmv_up      &mwh SCROLL_UP  &trans            &trans
+&trans  &trans    &mkp MCLK &mkp RCLK  &mkp LCLK  &trans        &mwh SCROLL_LEFT &u_mmv_left      &u_mmv_down    &u_mmv_right    &mwh SCROLL_RIGHT &trans
+                            &trans     &trans     &trans        &mkp LCLK &mkp RCLK &mkp MCLK
             >;
         };
 
