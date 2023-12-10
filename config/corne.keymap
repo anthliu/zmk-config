@@ -182,10 +182,10 @@ SHIFT_FUNC(u_nine_space, &kp N9, &kp SPACE)
 
         steno {
 // -----------------------------------------------------------------------------------------------------------------------------
-// |        |   Q    |   W    |     E     |     R     |     T     | # |     Y     |     U    |    I    |    O   |   P      |     |
-// |        | A/LGUI | S/LALT |  D/LCTRL  |  F/LSHFT  |     G     | # |     H     | J/LSHFT  | K/LCTRR | L/LALT | '/LGUI   |     |
-// |        |   Z    | X/RALT |     C     |     V     |     B     | # |     N     |     M    |    ,    | ./RALT | //Layers |     |
-//                            | ESC/MEDIA | TAB/MOUSE | SPACE/NAV | # | ENTER/SYM | BSPC/NUM | DEL/FN  |
+// |        |  Q(S)  |  W(T)  |   E(P)    |    R(H)   |    T(*)   | # |    Y(*)   |   U(F)   |  I(P)   |  O(W)  |   P(W)   |  [(D)  |
+// |        |  A(S)  |  S(K)  |   D(W)    |    F(R)   |    G(*)   | # |    H(*)   |   J(R)   |  K(B)   |  L(G)  |   ;(S)   |  '(Z)  |
+// |        |        |        |           |           |           | # |           |          |         |        |  Layers  |        |
+//                            |           |    C(A)   |    V(O)   | # |    N(E)   |   M(U)   |         |
 
             label = "STENO";
             bindings = <
@@ -215,14 +215,14 @@ SHIFT_FUNC(u_nine_space, &kp N9, &kp SPACE)
 
         layers {
 // ---------------------------------------------------------------------------------------------
-// |      |     |     | CANARY | COLEMAK |     | # |     |      |         |        |      |      |
+// |      |     |     | STENO  | CANARY  |     | # |     |      |         |        |      |      |
 // |      |     |     | GAMING | QWERTY  |     | # |     |      |         |        |      |      |
 // |      |     |     |        |         |     | # |     |      |         |        | HELD |      |
 //                    |        |         |     | # |     |      |         |
 
             label = "BLayers";
             bindings = <
-&trans  &trans  &trans  &to CANARY &to COLEMAK &trans        &trans  &trans   &trans       &trans      &trans  &trans
+&trans  &trans  &trans  &to STENO  &to CANARY  &trans        &trans  &trans   &trans       &trans      &trans  &trans
 &trans  &trans  &trans  &to GAMING &to QWERTY  &trans        &trans  &trans   &trans       &trans      &trans  &trans
 &trans  &trans  &trans  &trans     &trans      &trans        &trans  &trans   &trans       &trans      &trans  &trans
                         &trans     &trans      &trans        &trans  &trans   &trans
