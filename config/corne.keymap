@@ -7,8 +7,8 @@
 
 // Layer Definitions
 #define QWERTY 0
-#define COLEMAK 1
-#define CANARY 2
+#define CANARY 1
+#define STENO 2
 #define GAMING 3
 #define LAYERS 4
 #define NAV 5
@@ -165,21 +165,6 @@ SHIFT_FUNC(u_nine_space, &kp N9, &kp SPACE)
             >;
         };
 
-        colemak {
-// -----------------------------------------------------------------------------------------------------------------------------
-// |        |   Q    |   W    |     F     |     P     |     B     | # |     J     |    L     |    U    |    Y   |   '    |     |
-// | LAYERS | A/LGUI | R/LALT |  S/LCTRL  |  T/LSHFT  |     G     | # |     M     | N/LSHFT  | E/LCTRL | I/LALT | O/LGUI |     |
-// |        |   Z    | X/RALT |     C     |     D     |     V     | # |     K     |    H     |    ,    | ./RALT | //Layer|     |
-//                            | ESC/MEDIA | SPACE/NAV | TAB/MOUSE | # | ENTER/SYM | BSPC/NUM | DEL/FN  |
-            label = "COLEMAK";
-            bindings = <
-&trans      &kp Q       &kp W       &kp F          &kp P          &kp B                &kp J          &kp L         &kp U          &kp Y         &kp SQT         &trans
-&trans      &hml LGUI A &hml LALT R &hml LCTRL S   &mt LSHFT T    &kp G                &kp M          &mt LSHFT N   &hmr LCTRL E   &hmr LALT I   &hmr LGUI O     &trans
-&trans      &kp Z       &hml RALT X &kp C          &kp D          &kp V                &kp K          &kp H         &kp CMMA       &hmr RALT DOT &lt LAYERS FSLH &trans
-                                    &lt MEDIA ESC  &lt MOUSE TAB  &lt NAV SPACE        &lt SYM ENTER  &lt NUM BSPC  &lt FN DEL
-            >;
-        };
-
         canary {
 // -----------------------------------------------------------------------------------------------------------------------------
 // |        |   W    |   L    |     Y     |     P     |     B     | # |     Z     |    F     |    O    |    U   |   '    |     |
@@ -192,6 +177,22 @@ SHIFT_FUNC(u_nine_space, &kp N9, &kp SPACE)
 &trans      &hml LGUI C &hml LALT R &hml LCTRL S   &mt LSHFT T    &kp G                &kp M          &mt LSHFT N   &hmr LCTRL E   &hmr LALT I    &hmr LGUI A     &trans
 &trans      &kp Q       &hml RALT J &kp V          &kp D          &kp K                &kp X          &kp H         &kp CMMA       &hmr RALT DOT  &lt LAYERS FSLH &trans
                                     &lt MEDIA ESC  &lt MOUSE TAB  &lt NAV SPACE        &lt SYM ENTER  &lt NUM BSPC  &lt FN DEL
+            >;
+        };
+
+        steno {
+// -----------------------------------------------------------------------------------------------------------------------------
+// |        |   Q    |   W    |     E     |     R     |     T     | # |     Y     |     U    |    I    |    O   |   P      |     |
+// |        | A/LGUI | S/LALT |  D/LCTRL  |  F/LSHFT  |     G     | # |     H     | J/LSHFT  | K/LCTRR | L/LALT | '/LGUI   |     |
+// |        |   Z    | X/RALT |     C     |     V     |     B     | # |     N     |     M    |    ,    | ./RALT | //Layers |     |
+//                            | ESC/MEDIA | TAB/MOUSE | SPACE/NAV | # | ENTER/SYM | BSPC/NUM | DEL/FN  |
+
+            label = "STENO";
+            bindings = <
+&trans      &kp Q       &kp W       &kp E          &kp R          &kp T                &kp Y          &kp U         &kp I          &kp O         &kp P           &kp LBKT
+&trans      &kp A       &kp S       &kp D          &kp F          &kp G                &kp H          &kp J         &kp K          &kp L         &kp SEMI        &kp SQT
+&trans      &trans      &trans      &trans         &trans         &trans               &trans         &trans        &trans         &trans        &mo LAYERS      &trans
+                                    &trans         &kp C          &kp V                &kp N          &kp M         &trans
             >;
         };
 
