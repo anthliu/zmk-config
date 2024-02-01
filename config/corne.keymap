@@ -192,7 +192,7 @@ SHIFT_FUNC(u_nine_space, &kp N9, &kp SPACE)
 &trans      &kp P         &kp O         &kp I          &kp U          &kp Y            &trans         &trans        &trans         &trans        &trans          &trans
 &trans      &hml LGUI SQT &hml LALT L   &hml LCTRL K   &mt LSHFT J    &kp H            &trans         &trans        &trans         &trans        &trans          &trans
 &trans      &trans        &hml RALT DOT &kp CMMA       &kp M          &kp N            &trans         &trans        &trans         &trans        &trans          &trans
-                                    &lt SYM ENTER  &lt NUM BSPC   &lt FN DEL           &trans         &trans        &trans
+                                    &lt FN DEL         &lt NUM BSPC   &lt SYM ENTER    &trans         &trans        &trans
             >;
         };
 
