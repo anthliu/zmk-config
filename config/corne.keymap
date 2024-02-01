@@ -8,7 +8,7 @@
 // Layer Definitions
 #define QWERTY 0
 #define CANARY 1
-#define STENO 2
+#define MIRROR 2
 #define GAMING 3
 #define LAYERS 4
 #define NAV 5
@@ -158,10 +158,10 @@ SHIFT_FUNC(u_nine_space, &kp N9, &kp SPACE)
 
             label = "QWERTY";
             bindings = <
-&trans      &kp Q       &kp W       &kp E          &kp R          &kp T                &kp Y          &kp U         &kp I          &kp O         &kp P           &trans
-&trans      &hml LGUI A &hml LALT S &hml LCTRL D   &mt LSHFT F    &kp G                &kp H          &mt LSHFT J   &hmr LCTRL K   &hmr LALT L   &hmr LGUI SQT   &trans
-&trans      &kp Z       &hml RALT X &kp C          &kp V          &kp B                &kp N          &kp M         &kp CMMA       &hmr RALT DOT &lt LAYERS FSLH &trans
-                                    &lt MEDIA ESC  &lt MOUSE TAB  &lt NAV SPACE        &lt SYM ENTER  &lt NUM BSPC  &lt FN DEL
+&trans      &kp Q        &kp W       &kp E          &kp R          &kp T                &kp Y          &kp U         &kp I          &kp O         &kp P           &trans
+&trans      &hml LGUI A  &hml LALT S &hml LCTRL D   &mt LSHFT F    &kp G                &kp H          &mt LSHFT J   &hmr LCTRL K   &hmr LALT L   &hmr LGUI SQT   &trans
+&trans      &lt MIRROR Z &hml RALT X &kp C          &kp V          &kp B                &kp N          &kp M         &kp CMMA       &hmr RALT DOT &lt LAYERS FSLH &trans
+                                     &lt MEDIA ESC  &lt MOUSE TAB  &lt NAV SPACE        &lt SYM ENTER  &lt NUM BSPC  &lt FN DEL
             >;
         };
 
@@ -180,19 +180,19 @@ SHIFT_FUNC(u_nine_space, &kp N9, &kp SPACE)
             >;
         };
 
-        steno {
+        mirror {
 // -----------------------------------------------------------------------------------------------------------------------------
-// |        |  Q(S)  |  W(T)  |   E(P)    |    R(H)   |    T(*)   | # |    Y(*)   |   U(F)   |  I(P)   |  O(W)  |   P(W)   |  [(D)  |
-// |        |  A(S)  |  S(K)  |   D(W)    |    F(R)   |    G(*)   | # |    H(*)   |   J(R)   |  K(B)   |  L(G)  |   ;(S)   |  '(Z)  |
-// |        |        |        |           |           |           | # |           |          |         |        |  Layers  |        |
-//                            |           |    C(A)   |    V(O)   | # |    N(E)   |   M(U)   |         |
+// |        |   P    |   O    |     I     |     U     |     Y     | # |     Y     |     U    |    I    |    O   |   P      |     |
+// |        | '/LGUI | L/LALT |  K/LCTRL  |  J/LSHFT  |     H     | # |     H     | J/LSHFT  | K/LCTRR | L/LALT | '/LGUI   |     |
+// |        | HELD   | ./RALT |     ,     |     M     |     N     | # |     N     |     M    |    ,    | ./RALT | //Layers |     |
+//                            | DEL/FN    | BSPC/NUM  | ENTER/SYM | # | ENTER/SYM | BSPC/NUM | DEL/FN  |
 
-            label = "STENO";
+            label = "MIRROR";
             bindings = <
-&trans      &kp Q       &kp W       &kp E          &kp R          &kp T                &kp Y          &kp U         &kp I          &kp O         &kp P           &kp LBKT
-&trans      &kp A       &kp S       &kp D          &kp F          &kp G                &kp H          &kp J         &kp K          &kp L         &kp SEMI        &kp SQT
-&trans      &trans      &trans      &trans         &trans         &trans               &trans         &trans        &trans         &trans        &mo LAYERS      &trans
-                                    &trans         &kp C          &kp V                &kp N          &kp M         &trans
+&trans      &kp P         &kp O         &kp I          &kp U          &kp Y            &trans         &trans        &trans         &trans        &trans          &trans
+&trans      &hml LGUI SQT &hml LALT L   &hml LCTRL K   &mt LSHFT J    &kp H            &trans         &trans        &trans         &trans        &trans          &trans
+&trans      &trans        &hml RALT DOT &kp CMMA       &kp M          &kp N            &trans         &trans        &trans         &trans        &trans          &trans
+                                    &lt SYM ENTER  &lt NUM BSPC   &lt FN DEL           &trans         &trans        &trans
             >;
         };
 
@@ -215,14 +215,14 @@ SHIFT_FUNC(u_nine_space, &kp N9, &kp SPACE)
 
         layers {
 // ---------------------------------------------------------------------------------------------
-// |      |     |     | STENO  | CANARY  |     | # |     |      |         |        |      |      |
+// |      |     |     |        | CANARY  |     | # |     |      |         |        |      |      |
 // |      |     |     | GAMING | QWERTY  |     | # |     |      |         |        |      |      |
 // |      |     |     |        |         |     | # |     |      |         |        | HELD |      |
 //                    |        |         |     | # |     |      |         |
 
             label = "BLayers";
             bindings = <
-&trans  &trans  &trans  &to STENO  &to CANARY  &trans        &trans  &trans   &trans       &trans      &trans  &trans
+&trans  &trans  &trans  &trans     &to CANARY  &trans        &trans  &trans   &trans       &trans      &trans  &trans
 &trans  &trans  &trans  &to GAMING &to QWERTY  &trans        &trans  &trans   &trans       &trans      &trans  &trans
 &trans  &trans  &trans  &trans     &trans      &trans        &trans  &trans   &trans       &trans      &trans  &trans
                         &trans     &trans      &trans        &trans  &trans   &trans
@@ -264,15 +264,15 @@ SHIFT_FUNC(u_nine_space, &kp N9, &kp SPACE)
 
         media {
 // -----------------------------------------------------------------------------------------------------
-// |     |      |      |       |       |      | # | RGB_TOG  |        | BR_D   | BR_U   | EP_ON  |     |
-// |     | LGUI | LALT | LCTRL | LSHFT |      | # | EP_TOG   | PREV   | VOL_D  | VOL_U  | NEXT   |     |
-// |     |      | RALT |       |       |      | # | OUT_TOG  | BT_0   | BT_1   | BT_2   | BT_3   |     |
+// |     |      |      |       |       |      | # | BOOT     | OUT_TOG| BR_D   | BR_U   | EP_TOG |     |
+// |     | LGUI | LALT | LCTRL | LSHFT |      | # | PREV     | VOL_D  | VOL_U  | NEXT   |        |
+// |     |      | RALT |       |       |      | # | BT_0     | BT_1   | BT_2   | BT_3   | BT_4   |
 //                     | HELD  |       |      | # | STOP     | PLAY/P | MUTE   |
             label = "Media";
             bindings = <
-&trans  &trans    &trans    &trans     &trans     &trans        &bootloader       &trans        &cp C_BRI_DN  &cp C_BRI_UP  &ext_power EP_ON  &trans
-&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans        &ext_power EP_TOG &cp C_PREV    &cp C_VOL_DN  &cp C_VOL_UP  &cp C_NEXT        &trans
-&trans  &trans    &kp RALT  &trans     &trans     &trans        &u_out_tog        &u_bt_sel_0   &u_bt_sel_1   &u_bt_sel_2   &u_bt_sel_3       &trans
+&trans  &trans    &trans    &trans     &trans     &trans        &bootloader       &u_out_tog    &cp C_BRI_DN  &cp C_BRI_UP  &ext_power EP_TOG &trans
+&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans        &cp C_PREV        &cp C_VOL_DN  &cp C_VOL_UP  &cp C_NEXT    &trans            &trans
+&trans  &trans    &kp RALT  &trans     &trans     &trans        &u_bt_sel_0       &u_bt_sel_1   &u_bt_sel_2   &u_bt_sel_3   &u_bt_sel_4       &trans
                             &trans     &trans     &trans        &cp C_STOP        &cp C_PP      &cp C_MUTE
             >;
         };
