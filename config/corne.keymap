@@ -234,14 +234,14 @@ SHIFT_FUNC(u_nine_space, &kp N9, &kp SPACE)
 // --------------------------------------------------------------------------------------------
 // |     |      | LEFT | UP    | DOWN  | RT   | # | REDO  | CUT  | COPY | PASTE | UNDO  |     |
 // |     | LGUI | LALT | LCTRL | LSHFT | REPT | # | LEFT | DOWN | UP    | RIGHT | CAPSW |     |
-// |     | UNDO | CUT  | COPY  | PASTE |      | # | HOME | PGDN | PGUP  | END   | INS   |     |
+// |     | UNDO | CUT  | COPY  | PASTE | BOLD | # | HOME | PGDN | PGUP  | END   | INS   |     |
 //                     |       |       | HELD | # | ENTER | BSPC | DEL  |
 
             label = "Nav";
             bindings = <
 &trans  &trans    &kp LEFT  &kp UP     &kp DOWN   &kp RIGHT     &kp K_REDO    &kp K_CUT  &kp K_COPY  &kp K_PASTE  &kp K_UNDO   &trans
 &trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &key_repeat   &u_nav_lt     &u_nav_dn  &u_nav_up   &u_nav_rt    &u_caps_word &trans
-&trans  &kp LC(Z) &kp LC(X) &kp LC(C)  &kp LC(V)  &trans        &kp HOME      &kp PG_DN  &kp PG_UP   &kp END      &kp INS      &trans
+&trans  &kp LC(Z) &kp LC(X) &kp LC(C)  &kp LC(V)  &kp LC(B)     &kp HOME      &kp PG_DN  &kp PG_UP   &kp END      &kp INS      &trans
                             &trans     &trans     &trans        &kp ENTER     &kp BSPC   &kp DEL
             >;
         };
@@ -250,14 +250,14 @@ SHIFT_FUNC(u_nine_space, &kp N9, &kp SPACE)
 // ------------------------------------------------------------------------------------
 // |     |      | LEFT | UP    | DOWN  | RT   | # | REDO | CUT  | COPY | PASTE | UNDO |     |
 // |     | LGUI | LALT | LCTRL | LSHFT |      | # |      | SCDN | UP   | SCUP  |      |     |
-// |     | UNDO | CUT  | COPY  | PASTE |      | # | SCLFT| LEFT | DOWN | RIGHT | SCRT |     |
+// |     | UNDO | CUT  | COPY  | PASTE | BOLD | # | SCLFT| LEFT | DOWN | RIGHT | SCRT |     |
 //                     |       | HELD  |      | # | LCLK | RCLK | MCLK |
 
             label = "Mouse";
             bindings = <
 &trans  &trans    &kp LEFT  &kp UP     &kp DOWN   &kp RIGHT     &kp K_REDO    &kp K_CUT  &kp K_COPY  &kp K_PASTE  &kp K_UNDO   &trans
 &trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans        &trans           &mwh SCROLL_DOWN &u_mmv_up      &mwh SCROLL_UP  &trans            &trans
-&trans  &kp LG(Z) &kp LG(X) &kp LG(C)  &kp LG(V)  &trans        &mwh SCROLL_LEFT &u_mmv_left      &u_mmv_down    &u_mmv_right    &mwh SCROLL_RIGHT &trans
+&trans  &kp LG(Z) &kp LG(X) &kp LG(C)  &kp LG(V)  &kp LG(B)     &mwh SCROLL_LEFT &u_mmv_left      &u_mmv_down    &u_mmv_right    &mwh SCROLL_RIGHT &trans
                             &trans     &trans     &trans        &mkp LCLK &mkp RCLK &mkp MCLK
             >;
         };
