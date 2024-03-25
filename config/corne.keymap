@@ -108,17 +108,25 @@ SHIFT_FUNC(NAME, BINDING, &u_macro_ ## NAME)
 #undef MOVE_DOWN
 #undef MOVE_LEFT
 #undef MOVE_RIGHT
-#define MOVE_UP MOVE_VERT(-U_MOUSE_MOVE_MAX)
-#define MOVE_DOWN MOVE_VERT(U_MOUSE_MOVE_MAX)
-#define MOVE_LEFT MOVE_HOR(-U_MOUSE_MOVE_MAX)
-#define MOVE_RIGHT MOVE_HOR(U_MOUSE_MOVE_MAX)
-#define MOVE_UP_P MOVE_VERT(-U_MOUSE_P_MOVE_MAX)
-#define MOVE_DOWN_P MOVE_VERT(U_MOUSE_P_MOVE_MAX)
-#define MOVE_LEFT_P MOVE_HOR(-U_MOUSE_P_MOVE_MAX)
-#define MOVE_RIGHT_P MOVE_HOR(U_MOUSE_P_MOVE_MAX)
+#define MOVE_UP MOVE_Y(-U_MOUSE_MOVE_MAX)
+#define MOVE_DOWN MOVE_Y(U_MOUSE_MOVE_MAX)
+#define MOVE_LEFT MOVE_X(-U_MOUSE_MOVE_MAX)
+#define MOVE_RIGHT MOVE_X(U_MOUSE_MOVE_MAX)
+#define MOVE_UP_P MOVE_Y(-U_MOUSE_P_MOVE_MAX)
+#define MOVE_DOWN_P MOVE_Y(U_MOUSE_P_MOVE_MAX)
+#define MOVE_LEFT_P MOVE_X(-U_MOUSE_P_MOVE_MAX)
+#define MOVE_RIGHT_P MOVE_X(U_MOUSE_P_MOVE_MAX)
 
 &mmv {
-    time-to-max-speed-ms = <300>;             /* <--- How long time until max speed is reached (default: 500) */
+    acceleration-exponent = <2>;      // 1
+    time-to-max-speed-ms = <300>;    // 500
+    delay-ms = <0>;                   // 0
+};
+
+&msc {
+    acceleration-exponent = <1>;      // 1
+    time-to-max-speed-ms = <40>;      // 40
+    delay-ms = <0>;                   // 10
 };
 
 // custom macros
@@ -256,8 +264,8 @@ SHIFT_FUNC(u_nine_space, &kp N9, &kp SPACE)
             label = "Mouse";
             bindings = <
 &trans  &trans    &kp LEFT  &kp UP     &kp DOWN   &kp RIGHT     &kp K_REDO    &kp K_CUT  &kp K_COPY  &kp K_PASTE  &kp K_UNDO   &trans
-&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans        &trans           &mwh SCROLL_DOWN &u_mmv_up      &mwh SCROLL_UP  &trans            &trans
-&trans  &kp LG(Z) &kp LG(X) &kp LG(C)  &kp LG(V)  &kp LG(B)     &mwh SCROLL_LEFT &u_mmv_left      &u_mmv_down    &u_mmv_right    &mwh SCROLL_RIGHT &trans
+&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans        &trans           &msc SCRL_DOWN &u_mmv_up      &msc SCRL_UP  &trans            &trans
+&trans  &kp LG(Z) &kp LG(X) &kp LG(C)  &kp LG(V)  &kp LG(B)     &msc SCRL_LEFT &u_mmv_left      &u_mmv_down    &u_mmv_right    &msc SCRL_RIGHT &trans
                             &trans     &trans     &trans        &mkp LCLK &mkp RCLK &mkp MCLK
             >;
         };
