@@ -230,10 +230,10 @@ SHIFT_FUNC(u_nine_space, &kp N9, &kp SPACE)
 
             label = "BLayers";
             bindings = <
-&trans  &trans  &trans  &trans     &to CANARY  &trans        &trans  &trans   &trans       &trans      &trans  &trans
-&trans  &trans  &trans  &to GAMING &to QWERTY  &trans        &trans  &trans   &trans       &trans      &trans  &trans
-&trans  &trans  &trans  &trans     &trans      &trans        &trans  &trans   &trans       &trans      &trans  &trans
-                        &trans     &trans      &trans        &trans  &trans   &trans
+&trans  &trans  &trans  &trans     &to CANARY  &trans        &trans    &trans   &trans       &trans      &trans  &trans
+&trans  &trans  &trans  &to GAMING &to QWERTY  &trans        &trans    &trans   &trans       &trans      &trans  &trans
+&trans  &trans  &trans  &trans     &trans      &trans        &trans    &trans   &trans       &trans      &trans  &trans
+                        &trans     &trans      &trans        &to MEDIA &to NUM  &to FN
             >;
         };
 
