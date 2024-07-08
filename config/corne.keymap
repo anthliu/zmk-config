@@ -209,10 +209,10 @@ SHIFT_FUNC(u_nine_space, &kp N9, &kp SPACE)
 
         gaming {
 // ----------------------------------------------------------------------------------------------------
-// |        | ESC   |   1   |   2   |   3   |   4   | # |     Y     |     U    |    I    |    O   |   P      |     |
-// |        | TAB   |   Q   |   W   |   E   |   R   | # |     H     | J/LSHFT  | K/LCTRR | L/LALT | '/LGUI   |     |
-// |        | SHIFT |   A   |   S   |   D   |   F   | # |     N     |     M    |    ,    | ./RALT | //Layers |     |
-//                          |  CTRL | g-lit | SPACE | # | ENTER | BSPC  |  DEL  |
+// |        | TAB   |   1   |   2   |   3   |   4   | # |     Y     |     U    |    I    |    O   |   P      |     |
+// |        | LCTRL |   Q   |   W   |   E   |   R   | # |     H     | J/LSHFT  | K/LCTRR | L/LALT | '/LGUI   |     |
+// |        | LALT  |   A   |   S   |   D   |   F   | # |     N     |     M    |    ,    | ./RALT | //Layers |     |
+//                          |  SHFT | g-lit | SPACE | # | ENTER | BSPC  |  DEL  |
 
             label = "Gaming";
             bindings = <
@@ -226,14 +226,14 @@ SHIFT_FUNC(u_nine_space, &kp N9, &kp SPACE)
         glit {
 // -----------------------------------------------------------------------------------------------------------------------------
 // |        | ESC    |   I    |     O     |     P     |     T     | # |     Y     |     U    |    I    |    O   |   P      |     |
-// |        | TILDE  |   H    |     M     |     F     |     G     | # |     H     |     J    |    K    |    L   |   '      |     |
+// |        | TILDE  |   H    |     N     |     M     |     G     | # |     H     |     J    |    K    |    L   |   '      |     |
 // |        |   Z    |   X    |     C     |     V     |     B     | # |     N     |     M    |    ,    |    .   |   /      |     |
 //                            |           |  HELD     |           | # |           |          |         |
 
             label = "G-Literals";
             bindings = <
-&trans      &kp Q        &kp W       &kp E          &kp R          &kp T                &kp Y          &kp U         &kp I          &kp O         &kp P           &trans
-&trans      &kp A        &kp S       &kp D          &kp F          &kp G                &kp H          &kp J         &kp K          &kp L         &kp SQT         &trans
+&trans      &kp ESC      &kp I       &kp O          &kp P          &kp T                &kp Y          &kp U         &kp I          &kp O         &kp P           &trans
+&trans      &kp TILDE    &kp H       &kp N          &kp M          &kp G                &kp H          &kp J         &kp K          &kp L         &kp SQT         &trans
 &trans      &kp Z        &kp X       &kp C          &kp V          &kp B                &kp N          &kp M         &kp CMMA       &kp DOT       &kp FSLH        &trans
                                      &trans         &trans         &trans               &trans         &trans        &trans
             >;
