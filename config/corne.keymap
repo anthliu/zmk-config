@@ -217,8 +217,8 @@ SHIFT_FUNC(u_nine_space, &kp N9, &kp SPACE)
             label = "Gaming";
             bindings = <
 &trans      &kp TAB    &kp N1 &kp N2   &kp N3     &kp N4         &kp Y          &kp U         &kp I          &kp O         &kp P           &trans
-&trans      &kp LCTRL  &kp Q  &kp W    &kp E      &kp R          &kp H          &mt LSHFT J   &hmr LCTRL K   &hmr LALT L   &hmr LGUI SQT   &trans
-&trans      &kp LALT   &kp A  &kp S    &kp D      &kp F          &kp N          &kp M         &kp CMMA       &mt RALT DOT  &lt LAYERS FSLH &trans
+&trans      &kp LCTRL  &kp Q  &kp W    &kp E      &kp R          &kp H          &kp J         &kp K          &kp L         &kp SQT         &trans
+&trans      &kp LALT   &kp A  &kp S    &kp D      &kp F          &kp N          &kp M         &kp CMMA       &kp DOT       &lt LAYERS FSLH &trans
                       &kp LSHFT &mo GLIT  &kp SPACE       &kp ENTER  &kp BSPC  &kp DEL
             >;
         };
